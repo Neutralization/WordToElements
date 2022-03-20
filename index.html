@@ -1,0 +1,281 @@
+<td></td>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Word to Elements</title>
+
+<head>
+    <style>
+        html {
+            background: #efefef;
+        }
+        
+        div {
+            /* width: 50%; */
+            position: relative;
+            text-align: left;
+            font-weight: bold;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            /* flex-grow: 1; */
+            /* overflow: hidden; */
+        }
+        
+        input {
+            margin: auto;
+            font-size: 42px;
+            text-align: center;
+            margin-top: 10%;
+        }
+        
+        h2 {
+            margin-left: 20%;
+            margin-right: 20%;
+            line-height: 2;
+            text-align: left;
+            font-weight: normal;
+        }
+        
+        p {
+            margin-left: 20%;
+            margin-right: 20%;
+            line-height: 2;
+            font-size: 20px;
+            text-align: left;
+            font-weight: normal;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #66ccff
+        }
+        
+        table {
+            margin: auto;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+            text-align: left;
+            display: contents;
+        }
+        
+        .ele {
+            background-color: #ffffff;
+            border: solid 2px #03a9f4;
+            overflow: hidden;
+            width: 80;
+            height: 90;
+        }
+        
+        .letter {
+            position: absolute;
+            text-align: center;
+            font-size: 50;
+            Font-weight: bold;
+            top: 10%;
+        }
+        
+        .number {
+            position: absolute;
+            font-size: 12px;
+            top: 1%;
+            left: 2%;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div><input id="words" type="text"></div>
+    <table id="elements">
+        <tr>
+            <td>
+                <div class="ele">
+                    <div class="letter">H</div>
+                    <div class="number">1</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">Y</div>
+                    <div class="number">39</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">P</div>
+                    <div class="number">15</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">Er</div>
+                    <div class="number">102</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">Co</div>
+                    <div class="number">27</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">N</div>
+                    <div class="number">7</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">Sc</div>
+                    <div class="number">21</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">I</div>
+                    <div class="number">53</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">O</div>
+                    <div class="number">8</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">U</div>
+                    <div class="number">108</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">Sn</div>
+                    <div class="number">50</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">Es</div>
+                    <div class="number">115</div>
+                </div>
+            </td>
+            <td>
+                <div class="ele">
+                    <div class="letter">S</div>
+                    <div class="number">16</div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="content">
+        <h2>Free Talk</h2>
+        <p>　　这是一个将英文单词拆成化学元素符号的工具，尝试不重复的使用118个元素符号组成输入的单词。
+            <br>　　其实还有一个Adobe全家桶版本，但能拼出最长的单词是Archaistic，太短了很没劲。
+            <br>　　会做这么个玩具是因为前几年看了<a href="https://space.bilibili.com/365154525" target="_blank">TwoSetViolin</a>的视频，他们出了一件PrAcTiCe的衣服周边，很喜欢这种元素符号拼接单词的创意。
+            <br>　　但是时隔多年才摸出来这个页面，第一次写前端，代码丑陋很抱歉。顺带一提他们的周边<a href="https://twosetapparel.com/collections/shop-all" target="_blank">仍然在售</a>。
+        </p>
+
+        <h2>Github</h2>
+        <p><a href="https://github.com/Neutralization/WordToElements" target="_blank">　　https://github.com/Neutralization/WordToElements</a></p>
+    </div>
+    <script type="text/javascript">
+        let table = document.getElementById("elements")
+        words.addEventListener("input", function(e) {
+            let origin = this.value
+            origin = origin.replace(/[^a-z]/gi, "")
+            let PeriodicTable = [
+                "H", "He",
+                "Li", "Be", "B", "C", "N", "O", "F", "Ne",
+                "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar",
+                "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr",
+                "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe",
+                "Cs", "Ba", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn",
+                "Fr", "Ra", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og",
+                "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb",
+                "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No",
+            ]
+            let elements = PeriodicTable.map(p => p.toLowerCase())
+            const result = []
+
+            function guess(w) {
+                if (w.length == 0) {
+                    return true
+                }
+                // alert(w)
+                if (elements.includes(w.substring(0, 2))) {
+                    result.push(w.substring(0, 2))
+                    const index = elements.indexOf(w.substring(0, 2))
+                    elements.splice(index, 1)
+                    if (guess(w.substring(2, w.length)) == false) {
+                        result.pop()
+                        elements.push(w.substring(0, 2))
+                        if (elements.includes(w.substring(0, 1))) {
+                            result.push(w.substring(0, 1))
+                            const index = elements.indexOf(w.substring(0, 1))
+                            elements.splice(index, 1)
+                            if (guess(w.substring(1, w.length)) == false) {
+                                result.pop()
+                                elements.push(w.substring(0, 1))
+                                return false
+                            }
+                        }
+                    }
+                } else if (elements.includes(w.substring(0, 1))) {
+                    result.push(w.substring(0, 1))
+                    const index = elements.indexOf(w.substring(0, 1))
+                    elements.splice(index, 1)
+                    if (guess(w.substring(1, w.length)) == false) {
+                        result.pop()
+                        elements.push(w.substring(0, 1))
+                        if (elements.includes(w.substring(0, 2))) {
+                            result.push(w.substring(0, 2))
+                            const index = elements.indexOf(w.substring(0, 2))
+                            elements.splice(index, 2)
+                            if (guess(w.substring(2, w.length)) == false) {
+                                result.pop()
+                                elements.push(w.substring(0, 2))
+                                return false
+                            }
+                        }
+                    }
+                } else {
+                    return false
+                }
+            }
+
+            function judge(t) {
+                guess(t.toLowerCase())
+                if (result.join('') == t.toLowerCase()) {
+                    let row = table.insertRow(0)
+                    document.getElementsByTagName("tr")[1].remove()
+                    for (let i = 0; i < result.length; i++) {
+                        let cell = row.insertCell(i)
+                        let e = result[i]
+                        e = e[0].toUpperCase() + e.substring(1)
+                        let number = PeriodicTable.indexOf(e) + 1
+                        const arr = ["#d95836", "#e8ad10", "#a6aa13", "#2b8b92", "#ff99cc", "#f7d857", "#94d7e5", "#ffffff"]
+                        cell.innerHTML = `<div class="ele" style="background-color: ` + arr[Math.floor(Math.random() * arr.length)] + `"><div class="letter">` + e + `</div><div class="number">` + number + `</div></div>`
+                    }
+                    return true
+                } else {
+                    let row = table.insertRow(0)
+                    document.getElementsByTagName("tr")[1].remove()
+                    let cell = row.insertCell(0)
+                    cell.innerHTML = ""
+                    return false
+                }
+            }
+            judge(origin)
+        })
+        document.getElementById("words").value = "hyperconsciousness"
+    </script>
+</body>
+
+</html>
